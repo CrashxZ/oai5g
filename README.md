@@ -3,7 +3,8 @@
 ---
 #### Sources - 
 1. Configure sources
-   'sudo dpkg --add-architecture arm64
+   `
+   sudo dpkg --add-architecture arm64
    echo -e \
         "deb [arch=arm64] https://mirror.enzu.com/ubuntu/  jammy main restricted\n"\
         "deb [arch=arm64] https://mirror.enzu.com/ubuntu/  jammy-updates main restricted\n"\

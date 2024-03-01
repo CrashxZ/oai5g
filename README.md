@@ -3,7 +3,7 @@
 ---
 #### Sources - 
 1. Configure sources
-   `
+ ```
    sudo dpkg --add-architecture arm64
    echo -e \
         "deb [arch=arm64] https://mirror.enzu.com/ubuntu/  jammy main restricted\n"\
@@ -19,4 +19,4 @@
   sudo sed -i -E "s/(deb)\ (http:.+)/\1\ [arch=amd64]\ \2/" /etc/apt/sources.list
 
 
-   `
+```

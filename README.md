@@ -19,4 +19,4 @@
   sudo sed -i -E "s/(deb)\ (http:.+)/\1\ [arch=amd64]\ \2/" /etc/apt/sources.list
 
 
-   '
+   `

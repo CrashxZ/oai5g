@@ -1,7 +1,7 @@
 # OAI 5G
-##OAI 5G - ARM64 Setup instructions
+## OAI 5G - ARM64 Setup instructions
 ---
-###Sources - Configure sources
+### 1. Sources - Configure sources
  ```
    sudo dpkg --add-architecture arm64
    echo -e \
@@ -38,16 +38,19 @@ sudo apt-get install -y \
     zlib1g-dev:arm64
 
 ```
-### Install required packeges
+### 2. Build and Install required packeges
 ```
 cd cmake_targets
-./build_oai -I
+export BUILD_UHD_FROM_SOURCE=True
+export UHD_VERSION=4.1.0.0  #use version availabe 
+./build_oai -I -w USRP
+
 ```
-### Install USRP
+### 3. Install USRP
 ```
 sudo apt install libuhd4.1.0
 ```
-### Build LDPC generators
+### 4. Build LDPC generators
 ```
 cd
 cd 
@@ -61,7 +64,7 @@ cmake ../../..
 make -j`nproc` ldpc_generators generate_T
 ```
 
-### RAN Build
+### 5. RAN Build
 ```
 cd ../build-cross
 cmake ../../.. -DCMAKE_TOOLCHAIN_FILE=../../../cmake_targets/cross-arm.cmake -DNATIVE_DIR=../build
